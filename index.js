@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
-const connDb = require('./db');
-const portNo = 3000;
+const connDb = require('./config/db');
 const product = require('./routes/productRoute');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 
 app.use('/api',product);
@@ -13,6 +15,6 @@ app.get('/',(req,res)=>{
 
 connDb();
 
-app.listen(portNo,()=>{
-    console.log(`server running on port no ${portNo}`);
+app.listen(process.env.PORT,()=>{
+    console.log(`server is running`);
 })
