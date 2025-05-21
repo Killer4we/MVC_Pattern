@@ -1,0 +1,52 @@
+.product-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #1f2937; /* dark background (gray-800) */
+  color: white;
+  border-radius: 8px;
+}
+
+.product-title,
+.product-content {
+  margin-bottom: 0.5rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-evenly;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.button-group a,
+.button-group button {
+  color: white;
+  background-color: #3b82f6; /* blue-500 */
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-group button:hover {
+  background-color: #2563eb; /* blue-600 */
+}
+
+.whatsapp-share-button {
+  background-color: #25D366;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.created-at {
+  font-size: 0.875rem;
+  color: #d1d5db; /* gray-300 */
+  margin-top: 0.5rem;
+}

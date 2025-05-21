@@ -46,11 +46,11 @@ const getProduct = async(req,res)=>{
 const createProduct = async(req,res)=>{
     try{
 
-        const {name,price,description,category} = req.body;
-        const newProduct = new Product({name,price,description,category});
+        const {name,price,description} = req.body;
+        const newProduct = new Product({name,price,description});
         await newProduct.save();
 
-        res.status(200).send("Product created successfully");
+        res.status(200).json({message:"Product created successfully"});
 
     }
     catch(error){
@@ -63,9 +63,9 @@ const createProduct = async(req,res)=>{
 
 const updateProduct = async(req,res)=>{
     const {id} = req.params;
-    const {name,price,description,category} = req.body;
+    const {name,price,description} = req.body;
     try{
-        const updatedProduct = await Product.findByIdAndUpdate(id,{name,price,description,category},{new:true});
+        const updatedProduct = await Product.findByIdAndUpdate(id,{name,price,description},{new:true});
         if(!updatedProduct){
             res.status(200).send("Product not found");
         }
